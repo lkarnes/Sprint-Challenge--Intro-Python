@@ -89,7 +89,7 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     latr = (lat2, lat1)
   for city in cities:
     if int(city.lat) in range(latr[0],latr[1]) and int(city.lon) in range(lonr[0],lonr[1]):
-      within.append(f"{city.name}: ({city.lat},{city.lon})")
+      within.append(City(city.name,city.lat,city.lon))
   
 
   # TODO Ensure that the lat and lon valuse are all floats
@@ -99,4 +99,4 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   return within
 
 result = cityreader_stretch(45,-100,32,-120, cities)
-print(result)
+
